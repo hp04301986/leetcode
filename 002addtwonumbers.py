@@ -15,7 +15,7 @@ class ListNode:
          self.next = None
 
 class Solution:
-    def addTwoNumbers(l1, l2):
+    def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
@@ -34,6 +34,3 @@ class Solution:
             n.next = n = ListNode(val);
         return res.next;
 
-test1 = ListNode[2, 4, 3]
-test2 = ListNode[5, 6, 4]
-print(Solution.addTwoNumbers(test1, test2))
