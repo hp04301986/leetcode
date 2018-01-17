@@ -21,5 +21,4 @@ class Solution:
 
 nums=[2, 7, 11, 15]
 target = 18
-print(nums.index(2,0))
-#print(Solution.twoSum(nums, target))
+print(Solution.twoSum(Solution,nums, target))
