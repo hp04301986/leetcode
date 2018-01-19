@@ -17,22 +17,39 @@ class Solution:
         ss = s[::-1]
         if s == ss:
             return s
-        temp = list()
         i = 0
-        while i < len(s):
-            print(i)
-            l = j = len(s)
-            while j > i:
-                print(j)
-                print("1:::", s[i:j])
-                print("2:::", ss[l-j:l-i])
-                if s[i:j] == ss[l-j:l-i]:
-                    temp.append(s[i:j])
-                j = j -1
+        res = s[0]
+        l = len(s)
+        while i < l:
+            j = l
+            t = l - i
+            while j > i + 1:
+                temp = s[i:j]
+                if temp == ss[l - j:t] and len(temp) > len(res):
+                    res = temp
+                j = j - 1
             i = i + 1
-        print(temp)
-        temp = sorted(temp, key=lambda x: len(x))
-        print(temp)
-        return sorted(temp, key=lambda x: len(x))[-1]
+        return res
 
-print(Solution.longestPalindrome(Solution, "ccd"));
+    def longestPalindrome1(self, s):
+        res = ""
+        for i in range(len(s)):
+            # odd case, like "aba"
+            tmp = self.helper(s, i, i)
+            if len(tmp) > len(res):
+                res = tmp
+            # even case, like "abba"
+            tmp = self.helper(s, i, i + 1)
+            if len(tmp) > len(res):
+                res = tmp
+        return res
+
+    # get the longest palindrome, l, r are the middle indexes
+    # from inner to outer
+    def helper(self, s, l, r):
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1;
+            r += 1
+        return s[l + 1:r]
+
+print(Solution.longestPalindrome1(Solution, "ccd"));
