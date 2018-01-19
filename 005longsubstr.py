@@ -44,8 +44,6 @@ class Solution:
                 res = tmp
         return res
 
-    # get the longest palindrome, l, r are the middle indexes
-    # from inner to outer
     def helper(self, s, l, r):
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1;
