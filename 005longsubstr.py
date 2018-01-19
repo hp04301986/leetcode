@@ -31,6 +31,8 @@ class Solution:
                 j = j -1
             i = i + 1
         print(temp)
+        temp = sorted(temp, key=lambda x: len(x))
+        print(temp)
         return sorted(temp, key=lambda x: len(x))[-1]
 
-print(Solution.longestPalindrome(Solution, "abb"));
+print(Solution.longestPalindrome(Solution, "ccd"));
