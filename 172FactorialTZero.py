@@ -16,4 +16,4 @@ class Solution(object):
         return r
 
 s = Solution()
-print(s.trailingZeroes(5))
+print(s.trailingZeroes(15))
